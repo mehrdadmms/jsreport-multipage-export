@@ -12,8 +12,7 @@ it should be mounted to neolyze download PDFs directory
 
 # Quick example
 
-
-`
+```
     POST https://localhost:8010 
     [
         {
@@ -25,4 +24,4 @@ it should be mounted to neolyze download PDFs directory
             data: "paramters related to this html"
         }
     ]
-`
+```
