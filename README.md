@@ -10,6 +10,13 @@ PDFs will be exported into /PDFs/ directory in parent directory of project
 it should be mounted to neolyze download PDFs directory 
 /home/neolyze/api.neolyze.com/downloads/PDFs
 
+# Quit start
+Install packages 
+`npm install`
+
+Start server
+`node app.js`
+
 # Quick example
 
 ```
