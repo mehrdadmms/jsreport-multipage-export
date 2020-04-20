@@ -12,14 +12,16 @@ it should be mounted to neolyze download PDFs directory
 
 # Quick example
 
-POST https://localhost:8010
-[
-    {
-        html: <html file content>,
-        data: <paramters related to this html>
-    },
-    {
-        html: <html file content>,
-        data: <paramters related to this html>
-    }
-]
+<p>
+    POST https://localhost:8010
+    [
+        {
+            html: <html file content>,
+            data: <paramters related to this html>
+        },
+        {
+            html: <html file content>,
+            data: <paramters related to this html>
+        }
+    ]
+</p>
