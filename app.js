@@ -13,5 +13,5 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 
 
 app.listen(PORT, ()=> {
-    console.log(`server is running on localhost:${config.port}`)
+    console.log(`server is running on localhost:${PORT}`)
 });
