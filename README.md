@@ -12,10 +12,14 @@ it should be mounted to neolyze download PDFs directory
 
 # Quit start
 Install packages 
-`npm install`
+```
+npm install
+```
 
 Start server
-`node app.js`
+```
+node app.js
+```
 
 # Quick example
 
