@@ -24,6 +24,7 @@
   "homepage": "https://gitlab.com/neolyze/jsreport-multipage-export#readme",
   "dependencies": {
     "async": "^3.2.0",
+    "body-parser": "^1.19.0",
     "bufferutil": "^4.0.1",
     "express": "^4.17.1",
     "handlebars": "^4.7.6",
