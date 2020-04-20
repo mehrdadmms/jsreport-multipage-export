@@ -8,8 +8,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 }));
 
-// app.use('/', index);
-
+app.use('/', require('./export'));
 
 
 app.listen(PORT, ()=> {
