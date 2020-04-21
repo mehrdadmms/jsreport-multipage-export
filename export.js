@@ -11,14 +11,14 @@ router.post('/', (req, res) => {
         data.map(({html, data}) => {return callback => render(html, data, callback)}),
         (err, bufferArray) => {
             if (err)
-                res.json({
+                return res.json({
                     status: 500,
                     error: err,
                     msg: "could not convert all HTMLs to PDF"
                 });
             try{
                 const mergedPDF = combinePDFBuffers(bufferArray);
-                res.json({
+                return res.json({
                     status: 200,
                     msg: "pdf successfully created",
                     data: {
@@ -26,7 +26,7 @@ router.post('/', (req, res) => {
                     }
                 });
             } catch (e) {
-                res.json({
+                return res.json({
                     status: 500,
                     error: e,
                     msg: "could not merge PDFs"
