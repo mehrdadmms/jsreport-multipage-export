@@ -4,12 +4,9 @@ const hummus = require('hummus');
 const memoryStreams = require('memory-streams');
 const { parallel } = require('async');
 const { render } = require('./jsreport');
-const { EXPORT_PDF } = require('./config');
-const fs = require('fs');
 
 router.post('/', (req, res) => {
     const data = req.body;
-    const { filePath, fileName } = PDFFile();
     parallel(
         data.map(({html, data}) => {return callback => render(html, data, callback)}),
         (err, bufferArray) => {
@@ -21,12 +18,12 @@ router.post('/', (req, res) => {
                 });
             try{
                 const mergedPDF = combinePDFBuffers(bufferArray);
-                fs.writeFileSync(filePath, mergedPDF);
                 res.json({
                     status: 200,
                     msg: "pdf successfully created",
-                    dockerFilePath: filePath,
-                    fileName: fileName
+                    data: {
+                        pdf: mergedPDF
+                    }
                 });
             } catch (e) {
                 res.json({
@@ -38,17 +35,6 @@ router.post('/', (req, res) => {
         }
     );
 });
-
-function PDFFile(){
-    if (!fs.existsSync(EXPORT_PDF)){
-        fs.mkdirSync(EXPORT_PDF);
-    }
-    const fileName = new Date().getTime() + '.pdf';
-    return  {
-        filePath: EXPORT_PDF + fileName,
-        fileName: fileName
-    }
-}
 
 function combinePDFBuffers (bufferArray) {
     let outStream = new memoryStreams.WritableStream();
