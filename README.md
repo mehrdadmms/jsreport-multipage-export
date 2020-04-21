@@ -1,14 +1,12 @@
 # jsreport-multipage-export
 
-You can export dashboard by sending multiple htmls 
+You can export multiple HTMLs to a single PDF <br>
+This code is based on [jsreport-core](https://github.com/jsreport/jsreport-core) <br>
+You can see their documentation to understand how to design your HTML and pass parameters
+ 
 
 # Port
 Server is running on port 8010 you can change it in config
-
-# Export path
-PDFs will be exported into /PDFs/ directory in parent directory of project 
-it should be mounted to neolyze download PDFs directory 
-/home/neolyze/api.neolyze.com/downloads/PDFs
 
 # Quit start
 Install packages 
@@ -24,15 +22,35 @@ node app.js
 # Quick example
 
 ```
-    POST https://localhost:8010 
-    [
+    const body = [
         {
-            html: "html file content",
-            data: "paramters related to this html"
+            "html": "content of ParamPage.html",
+            "data": {
+                "param":{
+                    "followers":"12,342",
+                    "taged":"200",
+                    "engagementRate":"20.32%",
+                    "posts":"2420"
+                }
+            }
         },
         {
-            html: "html file content",
-            data: "paramters related to this html"
+            "html": "content of ParamPage.html",
+            "data": {
+                "param":{
+                    "followers":"12,342",
+                    "taged":"200",
+                    "engagementRate":"20.32%",
+                    "posts":"2420"
+                }
+            }
         }
     ]
+    request.post("http://localhost:8010", {json: body}, (error, response, body) => {
+        if (error) throw error;
+        if (body.status !== 200) throw body;
+        const filePath = './my_awesome_pdf.pdf';
+        fs.writeFileSync(filePath, Buffer.from(body.data.pdf.data));
+        console.log(filePath);
+    });
 ```
