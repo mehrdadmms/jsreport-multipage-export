@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/neolyze/jsreport-multipage-export.git"
+    "url": "git+https://github.com/mehrdadmms/jsreport-multipage-export.git"
   },
   "keywords": [
     "jsreport-core",
@@ -19,9 +19,9 @@
   "author": "Mehrdad MirMohammadSadeghi",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/neolyze/jsreport-multipage-export/issues"
+    "url": "https://github.com/mehrdadmms/jsreport-multipage-export/issues"
   },
-  "homepage": "https://gitlab.com/neolyze/jsreport-multipage-export#readme",
+  "homepage": "https://github.com/mehrdadmms/jsreport-multipage-export#readme",
   "dependencies": {
     "async": "^3.2.0",
     "body-parser": "^1.19.0",
