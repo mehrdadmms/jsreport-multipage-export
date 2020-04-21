@@ -7,6 +7,7 @@ const { render } = require('./jsreport');
 
 router.post('/', (req, res) => {
     const data = req.body;
+    console.log(`${new Date().toISOString()} | starting new export`);
     parallel(
         data.map(({html, data}) => {return callback => render(html, data, callback)}),
         (err, bufferArray) => {
@@ -19,7 +20,9 @@ router.post('/', (req, res) => {
                 });
             }
             try{
+                console.log(`${new Date().toISOString()} | all PDFs exported by jsreport and ready to merge`);
                 const mergedPDF = combinePDFBuffers(bufferArray);
+                console.log(`${new Date().toISOString()} | PDFs merged successfully`);
                 return res.json({
                     status: 200,
                     msg: "pdf successfully created",
