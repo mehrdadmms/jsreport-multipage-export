@@ -57,3 +57,13 @@ node app.js
         console.log(filePath);
     });
 ```
+# Docker
+For build docker:
+```
+docker build -t jsreport-multipage-export .
+```
+
+and for Run use:
+```
+docker run --cap-add=SYS_ADMIN --name NAME_CONTAINER -p 8010:8010 -d jsreport-multipage-export
+```
