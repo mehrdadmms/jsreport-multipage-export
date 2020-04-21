@@ -22,6 +22,9 @@ node app.js
 # Quick example
 
 ```
+    const fs = require('fs');
+    const request = require('request');
+
     const body = [
         {
             "html": "content of ParamPage.html",
