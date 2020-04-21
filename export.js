@@ -31,7 +31,7 @@ router.post('/', (req, res) => {
                     }
                 });
             } catch (e) {
-                console.log(e);
+                console.error(e);
                 return res.json({
                     status: 500,
                     error: e,
