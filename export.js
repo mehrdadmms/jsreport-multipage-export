@@ -10,12 +10,14 @@ router.post('/', (req, res) => {
     parallel(
         data.map(({html, data}) => {return callback => render(html, data, callback)}),
         (err, bufferArray) => {
-            if (err)
+            if (err){
+                console.error(err);
                 return res.json({
                     status: 500,
                     error: err,
                     msg: "could not convert all HTMLs to PDF"
                 });
+            }
             try{
                 const mergedPDF = combinePDFBuffers(bufferArray);
                 return res.json({
@@ -26,6 +28,7 @@ router.post('/', (req, res) => {
                     }
                 });
             } catch (e) {
+                console.log(e);
                 return res.json({
                     status: 500,
                     error: e,
