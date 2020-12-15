@@ -4,6 +4,7 @@
   "description": "you can pass multiple htmls and get a multi page pdf back",
   "main": "app.js",
   "scripts": {
+    "start": "node ./bin/www",
     "test": "node app.js"
   },
   "repository": {
@@ -23,17 +24,17 @@
   },
   "homepage": "https://github.com/mehrdadmms/jsreport-multipage-export#readme",
   "dependencies": {
-    "async": "^3.2.0",
-    "body-parser": "^1.19.0",
-    "bufferutil": "^4.0.1",
-    "express": "^4.17.1",
-    "handlebars": "^4.7.6",
-    "hummus": "^1.0.108",
-    "jsreport-chrome-pdf": "^1.7.1",
-    "jsreport-core": "^2.7.2",
-    "jsreport-handlebars": "^2.1.0",
-    "memory-streams": "^0.1.3",
-    "puppeteer": "^3.0.0",
-    "utf-8-validate": "^5.0.2"
+    "async": "3.2.0",
+    "body-parser": "1.19.0",
+    "bufferutil": "4.0.1",
+    "express": "4.17.1",
+    "handlebars": "4.7.6",
+    "hummus": "1.0.108",
+    "jsreport-chrome-pdf": "1.7.1",
+    "jsreport-core": "2.7.2",
+    "jsreport-handlebars": "2.1.0",
+    "memory-streams": "0.1.3",
+    "puppeteer": "3.0.0",
+    "utf-8-validate": "5.0.2"
   }
 }

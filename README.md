@@ -65,5 +65,5 @@ docker build -t jsreport-multipage-export .
 
 and for Run use:
 ```
-docker run --cap-add=SYS_ADMIN --name NAME_CONTAINER -p 8010:8010 -d jsreport-multipage-export
+docker run --init --cap-add=SYS_ADMIN --name NAME_CONTAINER -p 8010:8010 -d jsreport-multipage-export
 ```
