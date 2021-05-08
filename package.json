@@ -28,7 +28,7 @@
     "body-parser": "1.19.0",
     "bufferutil": "4.0.1",
     "express": "4.17.1",
-    "handlebars": "4.7.6",
+    "handlebars": "4.7.7",
     "hummus": "1.0.108",
     "jsreport-chrome-pdf": "1.7.1",
     "jsreport-core": "2.7.2",
