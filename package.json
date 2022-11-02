@@ -29,7 +29,7 @@
     "bufferutil": "4.0.1",
     "express": "4.17.1",
     "handlebars": "4.7.6",
-    "hummus": "1.0.108",
+    "hummus": "1.0.111",
     "jsreport-chrome-pdf": "1.7.1",
     "jsreport-core": "2.7.2",
     "jsreport-handlebars": "2.1.0",
